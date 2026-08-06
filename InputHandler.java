@@ -6,11 +6,11 @@ public class InputHandler {
     public void getInputForAddingStudent(StudentManager studentMan) {
         System.out.print("Input students name: ");
         String[] fName = input.nextLine().split(" ");
-        String first= "";
+        String first = "";
         String last = "";
         if (fName.length > 2) {
             first = fName[0] + " " + fName[1];
-            last = fName[2];
+            last = fName[fName.length - 1];
         } else if (fName.length < 2) {
             first = fName[0];
             last = "no last name";
@@ -21,7 +21,7 @@ public class InputHandler {
         System.out.print("Enter your age: ");
         int age = input.nextInt();
         input.nextLine();
-        if (age < 0 | age > 100) {
+        if (age < 0 || age > 100) {
             System.out.println("You can't exceed age limit 😭 be fr.");
         }
         System.out.print("Enter your college course ex. BSIT/BS Nursing/BS Crim: ");
@@ -29,14 +29,15 @@ public class InputHandler {
         int studentid = 0;
         if (studentMan.students.isEmpty()) {
             studentid = 2026000;
-        } else{
+        } else {
             int lastStudentID = studentMan.students.getLast().getStudentID();
             studentid = lastStudentID + 1;
 
         }
         studentMan.students.add(new Student(first, last, age, course, studentid));
     }
-    public void close(){
+
+    public void close() {
         input.close();
     }
 
