@@ -1,8 +1,8 @@
 public class Person {
 
-    String first;
-    String last;
-    int age;
+      String first;
+      String last;
+      int age;
 
     Person(String first, String last, int age){
         this.first = first;

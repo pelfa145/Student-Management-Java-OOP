@@ -9,7 +9,7 @@ public class Main {
     static void showMenu() {
         int choice;
         do {
-            System.out.println("Student Manager 2\n1. Add a student\n2. View students\n3. Delete Student\n4. Search student\n5. Exit");
+            System.out.println("Student Manager 2\n1. Add a student\n2. View students\n3. Delete Student\n4. Search student\n5. Update Student\n6. Exit");
             System.out.print("Input your choice: ");
             choice = input.returnInt();
             switch (choice) {
@@ -25,8 +25,9 @@ public class Main {
                     }
                 }
                 case 4 -> studentManager.searchStudent();
-                case 5 -> System.out.println("Bye!");
+                case 5 -> studentManager.updateStudent();
+                case 6 -> System.out.println("Bye!");
             }
-        } while (choice != 5);
+        } while (choice != 6);
     }
 }

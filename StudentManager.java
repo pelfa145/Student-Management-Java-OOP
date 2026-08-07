@@ -11,7 +11,33 @@ public class StudentManager {
             System.out.println(i.getName() + "|" + i.getAge() + "|" + i.getCourse() + "|" + i.getStudentID());
         }
     }
-
+    public void updateStudent() {
+        int index = searchStudent();
+        Student update = students.get(index);
+        System.out.println("What do you wanna update? \n\n1. Name\n2. Age\n3. Course");
+        System.out.print("Input your choice: ");
+        int choice = input.returnInt();
+        switch (choice) {
+            case 1 -> {
+                System.out.print("Input students name: ");
+                String[] fName = input.returnName();
+                System.out.println("Updated "+update.getFirst()+"'s name.");
+                update.setName(fName);
+            }
+            case 2 -> {
+                System.out.print("Input students age: ");
+                int newAge=input.returnInt();
+                System.out.println("Updated "+update.getAge()+"'s age.");
+                update.setAge(newAge);
+            }
+            case 3 -> {
+                System.out.print("Input students new course: ");
+                String newCourse = input.returnString();
+                System.out.println("Updated "+update.getCourse()+"'s course.");
+                update.setCourse(newCourse);
+            }
+        }
+    }
     public int deleteStudent() {
         int index = searchStudent();
         if (index == -1) {
