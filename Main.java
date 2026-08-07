@@ -21,7 +21,11 @@ public class Main {
                     }
                 }
                 case 2 -> studentManager.printStudents();
-                case 3 -> studentManager.deleteStudent();
+                case 3 -> {
+                    while (studentManager.deleteStudent() == -1) {
+                        System.out.println("Try again.");
+                    }
+                }
                 case 4 -> System.out.println("Bye!");
             }
         }while(choice != 4);
