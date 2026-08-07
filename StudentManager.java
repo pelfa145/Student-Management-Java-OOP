@@ -13,6 +13,9 @@ public class StudentManager {
     }
     public void updateStudent() {
         int index = searchStudent();
+        if (index == -1){
+            return;
+        }
         Student update = students.get(index);
         System.out.println("What do you wanna update? \n\n1. Name\n2. Age\n3. Course");
         System.out.print("Input your choice: ");
@@ -27,13 +30,13 @@ public class StudentManager {
             case 2 -> {
                 System.out.print("Input students age: ");
                 int newAge=input.returnInt();
-                System.out.println("Updated "+update.getAge()+"'s age.");
+                System.out.println("Updated "+update.getFirst()+"'s age.");
                 update.setAge(newAge);
             }
             case 3 -> {
                 System.out.print("Input students new course: ");
                 String newCourse = input.returnString();
-                System.out.println("Updated "+update.getCourse()+"'s course.");
+                System.out.println("Updated "+update.getFirst()+"'s course.");
                 update.setCourse(newCourse);
             }
         }
