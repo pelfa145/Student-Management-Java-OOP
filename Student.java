@@ -3,14 +3,11 @@ public class Student extends Person{
     int studentID;
     String course;
 
-
-
     Student(String first,String last,int age,String course,int studentID){
         super(first, last, age);
         this.studentID = studentID;
         this.course = course;
     }
-
 
     public int getStudentID() {
         return studentID;
@@ -25,5 +22,5 @@ public class Student extends Person{
     public String getCourse(){
         return course;
     }
-
+    public String getFirst(){return first;}
 }

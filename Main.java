@@ -1,7 +1,7 @@
 
 public class Main {
     static InputHandler input = new InputHandler();
-    static StudentManager studentMan = new StudentManager();
+    static StudentManager studentManager = new StudentManager();
     public static void main(String[] args) {
 
     showMenu();
@@ -11,14 +11,19 @@ public class Main {
     static void showMenu(){
         int choice;
         do{
-            System.out.println("Student Manager 2\n1. Add a student\n2. View students\n3. Exit");
+            System.out.println("Student Manager 2\n1. Add a student\n2. View students\n3. Delete Student\n4. Exit");
             System.out.print("Input your choice: ");
-            choice = input.menuChoice();
+            choice = input.returnInt();
             switch(choice){
-                case 1 -> input.getInputForAddingStudent(studentMan);
-                case 2 -> studentMan.printStudents();
-                case 3 -> System.out.println("Bye!");
+                case 1 -> {
+                   int returned = studentManager.addStudent();
+                   if(returned == -1){
+                       studentManager.addStudent();
+                }}
+                case 2 -> studentManager.printStudents();
+                case 3 -> studentManager.deleteStudent();
+                case 4 -> System.out.println("Bye!");
             }
-        }while(choice != 3);
+        }while(choice != 4);
     }
 }
