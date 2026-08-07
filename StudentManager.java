@@ -29,7 +29,7 @@ public class StudentManager {
         for (int i = 0; i < students.size(); i++) {
             Student j = students.get(i);
             if (j.getStudentID() == studentID) {
-                System.out.println("Found! at " + i + "!");
+                System.out.println("\nStudent Found!\n\nName: "+j.getName()+"\nAge: "+j.getAge()+"\nCourse: "+j.getCourse()+"\nID: "+j.getStudentID()+".\n");
                 return i;
             }
         }
