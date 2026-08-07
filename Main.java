@@ -16,10 +16,10 @@ public class Main {
             choice = input.returnInt();
             switch(choice){
                 case 1 -> {
-                   int returned = studentManager.addStudent();
-                   if(returned == -1){
-                       studentManager.addStudent();
-                }}
+                    while(studentManager.addStudent() == -1){
+                        System.out.println("Try again.");
+                    }
+                }
                 case 2 -> studentManager.printStudents();
                 case 3 -> studentManager.deleteStudent();
                 case 4 -> System.out.println("Bye!");
